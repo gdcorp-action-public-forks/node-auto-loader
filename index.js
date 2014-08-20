@@ -132,6 +132,7 @@ function Tree (root, children) {
     if (!!~['index', 'index.js'].indexOf(child)) return;
 
     var fpath = [path, child].join('/');
+    if (/^.*\.map$/.test(fpath)) return;
     var ext = extname(child);
     var name = child.replace(ext, '');
 
